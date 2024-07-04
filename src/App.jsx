@@ -1,5 +1,5 @@
-import { User } from "./components/User"
-
+import { Anime } from "./components/Anime"
+import DataFinder from "./components/Data"
 
 function App() {
   
@@ -7,7 +7,7 @@ function App() {
   return (
   
       <div>
-        <User />
+        <Anime />
       </div>
      
   )
