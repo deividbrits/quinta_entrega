@@ -1,16 +1,26 @@
 import { Anime } from "./components/Anime"
-import DataFinder from "./components/Data"
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
 
 function App() {
   
 
   return (
-  
-      <div>
-        <Anime />
-      </div>
-     
-  )
-}
+    
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          <main>    <Anime />
+          </main>
+        </ThemeProvider>
+      );
+    }
 
-export default App
+
+export default App 

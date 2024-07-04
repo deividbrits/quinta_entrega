@@ -52,9 +52,9 @@ export const Anime = () => {
       {
         anime && 
         <div>
-                    <Typography>{anime.title}</Typography>
-                    <Typography>{anime.synopsis}</Typography>
-                    <Typography>{anime.status}</Typography>
+                    <Typography variant="h1" gutterBottom> Nombre: {anime.title}</Typography>
+                    <Typography variant="h4" gutterBottom> Sinopsis : {anime.synopsis}</Typography>
+                    <Typography variant="h6" gutterBottom>Estado {anime.status}</Typography>
                     </div>
            
       }
