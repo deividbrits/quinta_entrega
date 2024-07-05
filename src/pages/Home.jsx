@@ -1,10 +1,32 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
 
-export const Home = () => {
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';;
+import Anime from '../components/Anime';
+import NavBar from '../components/NavBar';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+
+function Home() {
+  
+
   return (
-    <div>
-        <NavBar/>
-    </div>
-  )
-}
+    
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          <main>
+          <NavBar />
+             
+             <Anime />
+          
+          </main>
+        </ThemeProvider>
+      );
+    }
+
+
+export default Home; 
