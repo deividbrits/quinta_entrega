@@ -1,5 +1,10 @@
 import { Button, Container, TextField, Typography } from '@mui/material'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+
 
 export const Anime = () => {
     const [anime, setAnime] = useState(null)
@@ -39,7 +44,7 @@ export const Anime = () => {
       />
       <Button variant='contained' color='primary' onClick={fetchAnime}>Buscar</Button>
       {
-        loading && 
+        !loading && 
         <Typography>Cargando...</Typography>
       }
       
@@ -51,18 +56,27 @@ export const Anime = () => {
       }
       {
         anime && 
-        <div>
-                    <Typography variant="h1" gutterBottom> Nombre: {anime.title}</Typography>
-                    <Typography variant="h4" gutterBottom> Sinopsis : {anime.synopsis}</Typography>
-                    <Typography variant="h6" gutterBottom>Estado {anime.status}</Typography>
-                    </div>
-           
-      }
 
-
-
+        <Card sx={{ maxWidth: 'lg' }}>
+      <CardMedia
+        component="img"
+        height="600"
+        image={anime.images.jpg.large_image_url}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {anime.title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {anime.synopsis}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" onClick={ () => {window.open(anime.trailer.url)}} > Trailer</Button>
+        <Button size="small"onClick={ () => {window.open(anime.url)}} >Mas Informacion</Button>
+      </CardActions>
+    </Card>
+}
     </Container>
   )
-
 }
-export default Anime
