@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from '../components/Header'
+import AppGrid from '../components/AppGrid';
+
 
 export const About = () => {
   return (
-    <div>About</div>
+    <div><Header/>
+    
+      <AppGrid/>
+    </div>
   )
 }
 

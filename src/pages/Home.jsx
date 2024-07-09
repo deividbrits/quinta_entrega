@@ -1,8 +1,9 @@
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import NavBar from '../components/NavBar';
+// import NavBar from '../components/NavBar';
 import { Anime } from '../components/Anime';
+import Header from '../components/Header';
 
 const darkTheme = createTheme({
   palette: {
@@ -19,8 +20,8 @@ function Home() {
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <main>
-          <NavBar />
-             
+          {/* <NavBar /> */}
+             <Header />
              <Anime/>
           
           </main>
