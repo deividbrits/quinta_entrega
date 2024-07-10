@@ -8,6 +8,17 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { Button, CssBaseline } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
+
+const navItems = [
+  { name: 'Home',path: '/'},
+  {name: 'About',path: '/about' }
+];
+
+
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -53,6 +64,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavBar() {
+
+  const [open, setOpen] = React.useState(false);
+const navigate = useNavigate() 
+  
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    // handleDrawerToggle();
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -74,7 +94,42 @@ export default function NavBar() {
           >
             Buscador de Anime
           </Typography>
-          <Search>
+          <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar component="nav">
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={ () => handleNavigate(navItems[0].path)}
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            Buscador de Anime 
+          </Typography>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            {navItems.map((item) => (
+              <Button key={item.name} sx={{ color: '#fff' }} onClick={() => handleNavigate(item.path)}>
+                {item.name}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Box component="main" sx={{ p: 3 }}>
+        <Toolbar />
+        <Typography>
+        </Typography>
+      </Box>
+    </Box>
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -83,7 +138,7 @@ export default function NavBar() {
               inputProps={{ 'aria-label': 'search' }}
               
             />
-          </Search>
+          </Search> */}
         </Toolbar>
       </AppBar>
     </Box>

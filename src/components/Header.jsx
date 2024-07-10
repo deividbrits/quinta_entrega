@@ -14,29 +14,43 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+;
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About'];
+const navItems = [
+  { name: 'Home',path: '/'},
+  {name: 'About',path: '/about' }
+];
 
 function Header(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+  // const handleDrawerToggle = () => {
+  //   setMobileOpen((prevState) => !prevState);
+  // };
+
+const navigate = useNavigate();
+
+
+  const handleNavigate = (path) => {
+    navigate('/about');
+    // handleDrawerToggle();
   };
 
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleNavigate} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         Buscador de Anime
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.name} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -55,7 +69,7 @@ function Header(props) {
             color="inherit"
             aria-label="open drawer"
             edge="start"
-            onClick={handleDrawerToggle}
+            onClick={handleNavigate}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
@@ -69,19 +83,19 @@ function Header(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+              <Button key={item.name} sx={{ color: '#fff' }} onClick={() => handleNavigate()}>
+                {item.name}
               </Button>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
       <nav>
-        <Drawer
+        {/* <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
-          onClose={handleDrawerToggle}
+          onClose={handleNavigate}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
@@ -91,7 +105,7 @@ function Header(props) {
           }}
         >
           {drawer}
-        </Drawer>
+        </Drawer> */}
       </nav>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
