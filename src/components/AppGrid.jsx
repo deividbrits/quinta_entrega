@@ -4,6 +4,11 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
+import grilla1 from '../assets/anime1.jpg'
+import logo from '../assets/Malogo.jpg'
+import grilla2 from '../assets/anime2.jpg'
+
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -18,17 +23,17 @@ export default function AppGrid() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={8}>
-          <Item>xs=8</Item>
-          <Typography>Holas </Typography>
+          <Item> <img src={grilla1}/> </Item>
+          <Typography variant='h2'>Esta Pagina , es un proyecto del Bootcamp de Desarrollo Web Full Stack de la Universidad del Desarrollo , en el cual se solicitó realizar la tecnologia REACT, la cual debe consumir una API Pública. </Typography>
         </Grid>
         <Grid item xs={4}>
-          <Item>xs=4</Item>
+          <Item><img src={grilla2}/> </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>xs=4</Item>
+          <Item><img src={logo}/></Item>
         </Grid>
         <Grid item xs={8}>
-          <Item>xs=8</Item>
+          <Item><Typography variant='h2'>Para fines de este proyecto , y por gustos propios del autor , se consumio la API Jikan , autodenominada como la API no oficial de la popular pagina web MyAnimelist </Typography> </Item>
         </Grid>
       </Grid>
     </Box>

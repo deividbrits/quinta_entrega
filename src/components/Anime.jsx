@@ -39,7 +39,7 @@ export const Anime = () => {
       <TextField inputRef={inputRef}
       fullWidth
       variant='outlined'
-      placeholder='Ingrese el nombre del anime'
+      placeholder='Escribe por ejemplo, Konosuba'
       margin='normal'
       />
       <Button variant='contained' color='primary' onClick={fetchAnime}>Buscar</Button>

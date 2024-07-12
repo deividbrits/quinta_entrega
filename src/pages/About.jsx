@@ -1,16 +1,30 @@
 import React from 'react'
 // import Header from '../components/Header'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import AppGrid from '../components/AppGrid';
 import NavBar from '../components/NavBar';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 
 export const About = () => {
   return (
-    <div><NavBar/>
+    <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
+    <main>
+  <NavBar/>
     
       <AppGrid/>
-    </div>
-  )
-}
+      </main>
+        </ThemeProvider>
+      );
+    }    
+  
+
 
 export default About;
