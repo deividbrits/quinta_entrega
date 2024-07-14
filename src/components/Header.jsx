@@ -4,7 +4,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -27,16 +26,14 @@ function Header(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  // const handleDrawerToggle = () => {
-  //   setMobileOpen((prevState) => !prevState);
-  // };
+ 
 
 const navigate = useNavigate();
 
 
   const handleNavigate = (path) => {
     navigate('/about');
-    // handleDrawerToggle();
+   
   };
 
 
@@ -91,21 +88,7 @@ const navigate = useNavigate();
         </Toolbar>
       </AppBar>
       <nav>
-        {/* <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleNavigate}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer> */}
+     
       </nav>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />

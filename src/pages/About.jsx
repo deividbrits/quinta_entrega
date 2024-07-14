@@ -1,5 +1,4 @@
 import React from 'react'
-// import Header from '../components/Header'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppGrid from '../components/AppGrid';
