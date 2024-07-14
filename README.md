@@ -21,5 +21,5 @@ Por temas de tiempo , quedo al debe en mejorar la parte del diseño grafico de l
 Además la API Jikan , al consultar por un anime que tiene varias temporadas o peliculas , devuelve un arreglo con varios objetos en lo cual sale en la informacion de todo lo relacionado con respecto al nombre de ese anime, para este proyecto solo se ocupa el primer elemento de ese arreglo , pero en un futuro se mapeará el arreglo para poder visualizar todas las opciones que ofrece la API. 
 ## Despliegue
 
-Para el despliegue de esta página se utilizó Netlify. 
+Para el despliegue de esta página se utilizó Netlify. (https://buscanime.netlify.app/)
 
