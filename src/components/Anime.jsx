@@ -57,11 +57,10 @@ export const Anime = () => {
       {
         anime && 
 
-        <Card sx={{ maxWidth: 'lg' }}>
+        <Card sx={{ maxWidth: 'lg'}}>
       <CardMedia
         component="img"
-        height="600"
-        image={anime.images.jpg.large_image_url}
+        image ={anime.images.jpg.large_image_url}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

@@ -23,17 +23,17 @@ export default function AppGrid() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={8}>
-          <Item> <img src={grilla1}/> </Item>
-          <Typography variant='h2'>Esta Pagina , es un proyecto del Bootcamp de Desarrollo Web Full Stack de la Universidad del Desarrollo , en el cual se solicitó realizar la tecnologia REACT, la cual debe consumir una API Pública. </Typography>
+          <Item sx={{backgroundColor : "#000000"}}> <img src={grilla1}/> </Item>
+          <Typography variant='h1'>Esta Pagina , es un proyecto del Bootcamp de Desarrollo Web Full Stack de la Universidad del Desarrollo , en el cual se solicitó realizar la tecnologia REACT, la cual debe consumir una API Pública. </Typography>
         </Grid>
         <Grid item xs={4}>
-          <Item><img src={grilla2}/> </Item>
+          <Item sx={{backgroundColor : "#000000"}} ><img src={grilla2}/> </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><img src={logo}/></Item>
+          <Item sx={{backgroundColor : "#000000"}}><img src={logo}/></Item>
         </Grid>
         <Grid item xs={8}>
-          <Item><Typography variant='h2'>Para fines de este proyecto , y por gustos propios del autor , se consumio la API Jikan , autodenominada como la API no oficial de la popular pagina web MyAnimelist </Typography> </Item>
+          <Item sx={{backgroundColor : "#000000"}}> <Typography variant='h2' sx ={{backgroundColor : "#363f8e"}}>Para fines de este proyecto , y por gustos propios del autor , se consumio la API Jikan , autodenominada como la API no oficial de la popular pagina web MyAnimelist </Typography> </Item>
         </Grid>
       </Grid>
     </Box>
